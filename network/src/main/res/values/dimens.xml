@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <dimen name="network_paneltext_tite">24sp</dimen>
+    <dimen name="network_text_title">18sp</dimen>
+    <dimen name="network_text_summary">14sp</dimen>
+
+
+    <dimen name="network_checkbox_height">57dp</dimen>
+    <dimen name="network_edit_width">190dp</dimen>
+    <dimen name="network_item_height">70dp</dimen>
+
+    <dimen name="network_dialog_title_height">40dp</dimen>
+    <dimen name="network_dialog_Button_height">60dp</dimen>
+
+
+    <dimen name="view_space10">10dp</dimen>
+    <dimen name="view_space5">5dp</dimen>
+</resources>

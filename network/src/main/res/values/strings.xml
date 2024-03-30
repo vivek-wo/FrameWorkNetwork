@@ -1,0 +1,100 @@
+<resources xmlns:xliff="http://schemas.android.com/tools">
+    <string name="app_name">Network</string>
+
+    <string name="btn_confirm">确定</string>
+    <string name="btn_back">返回</string>
+    <string name="btn_cancel">取消</string>
+    <string name="btn_cancel_save">取消保存</string>
+    <string name="btn_save">保存</string>
+    <string name="btn_connect">连接</string>
+
+    <string name="eth_enable_toggle_title">使用以太网</string>
+    <string name="eth_mode_toggle_title">动态分配</string>
+
+    <string name="eth_unconnect_content">未连接</string>
+    <string name="eth_connect_content">已连接&#160;--&#160;使用设备：&#160;</string>
+
+    <string name="eth_ip_content_mode">&#160;--&#160;IP模式：&#160;</string>
+    <string name="eth_ip_content_mode_dhcp">动态</string>
+    <string name="eth_ip_content_mode_manual">静态</string>
+
+    <string name="eth_devices_text">以太网设备</string>
+
+    <string name="eth_config_text">以太网配置</string>
+    <string name="eth_configure_title">高级配置</string>
+
+    <string name="eth_ip_default_text">0.0.0.0</string>
+    <string name="eth_mac_default_text">00:00:00:00:00:00</string>
+
+    <string name="eth_ip_edit_title">IP地址</string>
+    <string name="eth_netmask_edit_title">子网掩码</string>
+    <string name="eth_gateway_edit_title">默认网关</string>
+    <string name="eth_dns_edit_title">DNS服务器</string>
+    <string name="eth_mac_edit_title">物理地址</string>
+
+    <string name="wifi_enable_switch_title">WLAN</string>
+    <string name="wifi_devices_list_text">WLAN设备</string>
+
+    <string name="wifi_starting" msgid="6732377932749942954">"正在打开 WLAN…"</string>
+    <string name="wifi_stopping" msgid="8952524572499500804">"正在关闭 WLAN…"</string>
+    <string name="wifi_error" msgid="3207971103917128179">"出错"</string>
+    <string name="wifi_fail_to_scan" msgid="1265540342578081461">"扫描不到网络"</string>
+
+    <string name="wifi_show_advanced" msgid="1793703023711426246">"启用静态配置"</string>
+
+    <string name="wifi_ssid" msgid="641393708309146745">"网络 SSID"</string>
+    <string name="wifi_ssid_hint" msgid="897593601067321355">"输入 SSID"</string>
+    <string name="wifi_security" msgid="6603611185592956936">"安全性"</string>
+    <string name="wifi_signal" msgid="5514120261628065287">"信号强度"</string>
+    <string name="wifi_status" msgid="4824568012414605414">"状态信息"</string>
+    <string name="wifi_speed" msgid="3526198708812322037">"连接速度"</string>
+    <string name="wifi_ip_address" msgid="1440054061044402918">"IP 地址"</string>
+    <string name="wifi_password" msgid="5948219759936151048">"密码"</string>
+    <string name="wifi_show_password" msgid="6461249871236968884">"显示密码"</string>
+    <string name="wifi_ip_settings" msgid="3359331401377059481">"IP 设置"</string>
+    <string name="wifi_unchanged" msgid="3410422020930397102">"（未更改）"</string>
+    <string name="wifi_unspecified" msgid="5431501214192991253">"（未指定）"</string>
+
+    <string name="wifi_remembered" msgid="4955746899347821096">"已保存"</string>
+    <string name="wifi_disabled_generic" msgid="4259794910584943386">"未启用"</string>
+    <string name="wifi_disabled_network_failure" msgid="3111321240793227690">"已停用（互联网连接状况不佳）"</string>
+    <string name="wifi_disabled_password_failure" msgid="8659805351763133575">"身份验证出现问题"</string>
+    <string name="wifi_not_in_range" msgid="1136191511238508967">"不在范围内"</string>
+    <string name="wifi_wps_available_first_item" msgid="4422547079984583502">"可使用 WPS"</string>
+    <string name="wifi_wps_available_second_item" msgid="8427520131718215301">" （可使用 WPS）"</string>
+    <string name="wifi_secured_first_item" msgid="4072076186051083451">"通过 <xliff:g id="WIFI_SECURITY_SHORT">%1$s</xliff:g> 进行保护"</string>
+    <string name="wifi_secured_second_item" msgid="1326000076939056265">"，通过 <xliff:g id="WIFI_SECURITY_SHORT">%1$s</xliff:g> 进行保护"</string>
+
+    <string name="wifi_dns1" msgid="7344118050720080045">"域名 1"</string>
+    <string name="wifi_dns2" msgid="1368601006824882659">"域名 2"</string>
+    <string name="wifi_gateway" msgid="163914742461092086">"网关"</string>
+    <string name="wifi_network_prefix_length" msgid="3028785234245085998">"网络前缀长度"</string>
+
+    <!-- Do not translate.  Concise terminology for wifi with WEP security -->
+    <string name="wifi_security_short_wep">WEP</string>
+    <!-- Do not translate.  Concise terminology for wifi with WPA security -->
+    <string name="wifi_security_short_wpa">WPA</string>
+    <!-- Do not translate.  Concise terminology for wifi with WPA2 security -->
+    <string name="wifi_security_short_wpa2">WPA2</string>
+    <!-- Do not translate.  Concise terminology for wifi with both WPA/WPA2 security -->
+    <string name="wifi_security_short_wpa_wpa2">WPA/WPA2</string>
+    <!-- Do not translate.  Concise terminology for wifi with unknown PSK type -->
+    <string name="wifi_security_short_psk_generic">@string/wifi_security_short_wpa_wpa2</string>
+    <!-- Do not translate.  Concise terminology for wifi with 802.1x EAP security -->
+    <string name="wifi_security_short_eap">802.1x</string>
+
+    <string name="wifi_security_none" msgid="7985461072596594400">"无"</string>
+
+    <!-- Do not translate.  Terminology for wifi with WEP security -->
+    <string name="wifi_security_wep">WEP</string>
+    <!-- Do not translate.  Terminology for wifi with WPA security -->
+    <string name="wifi_security_wpa">WPA PSK</string>
+    <!-- Do not translate.  Terminology for wifi with WPA2 security -->
+    <string name="wifi_security_wpa2">WPA2 PSK</string>
+    <!-- Do not translate.  Terminology for wifi with both WPA/WPA2 security, or unknown -->
+    <string name="wifi_security_wpa_wpa2">WPA/WPA2 PSK</string>
+    <!-- Do not translate.  Terminology for wifi with unknown PSK type -->
+    <string name="wifi_security_psk_generic">@string/wifi_security_wpa_wpa2</string>
+    <!-- Do not translate.  Concise terminology for wifi with 802.1x EAP security -->
+    <string name="wifi_security_eap">802.1x EAP</string>
+</resources>

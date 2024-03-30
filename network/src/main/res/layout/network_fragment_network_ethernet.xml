@@ -1,0 +1,94 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/network_eth_body_layout"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:gravity="center_horizontal"
+    android:orientation="vertical"
+    android:paddingLeft="@dimen/view_space10"
+    android:paddingRight="@dimen/view_space10">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:orientation="horizontal"
+        android:paddingRight="@dimen/view_space10">
+
+        <LinearLayout
+            style="@style/network_style.item_layout"
+            android:layout_weight="1"
+            android:orientation="vertical">
+
+            <TextView
+                style="@style/network_style.title"
+                android:text="@string/eth_enable_toggle_title" />
+
+            <TextView
+                android:id="@+id/network_eth_connect_content"
+                style="@style/network_style.summary"
+                android:text="@string/eth_unconnect_content" />
+
+        </LinearLayout>
+
+        <CheckBox
+            android:id="@+id/network_eth_enable_toggle"
+            style="@style/network_style_checkbox"
+            android:checked="true" />
+    </LinearLayout>
+
+    <TextView
+        style="@style/network_style.tip"
+        android:text="@string/eth_config_text" />
+
+    <include layout="@layout/network_include_split_line" />
+
+    <LinearLayout
+        style="@style/network_style.item_layout"
+        android:orientation="vertical">
+
+        <TextView
+            style="@style/network_style.title"
+            android:text="@string/eth_mac_edit_title" />
+
+        <TextView
+            android:id="@+id/network_eth_mac_content"
+            style="@style/network_style.summary"
+            android:text="@string/eth_mac_default_text" />
+
+    </LinearLayout>
+
+    <include layout="@layout/network_include_split_line" />
+
+    <LinearLayout
+        style="@style/network_style.item_layout"
+        android:orientation="vertical">
+
+        <TextView
+            style="@style/network_style.title"
+            android:text="@string/eth_ip_edit_title" />
+
+        <TextView
+            android:id="@+id/network_eth_ip_content"
+            style="@style/network_style.summary"
+            android:text="@string/eth_ip_default_text" />
+
+    </LinearLayout>
+
+    <include layout="@layout/network_include_split_line" />
+
+    <LinearLayout
+        android:id="@+id/network_eth_configure_llayout"
+        style="@style/network_style.item_layout"
+        android:background="@drawable/item_selected"
+        android:orientation="vertical">
+
+        <TextView
+            style="@style/network_style.title"
+            android:text="@string/eth_configure_title" />
+
+    </LinearLayout>
+
+    <include layout="@layout/network_include_split_line" />
+
+</LinearLayout>

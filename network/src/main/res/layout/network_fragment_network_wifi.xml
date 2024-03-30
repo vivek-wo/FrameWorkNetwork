@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:gravity="center_horizontal"
+    android:orientation="vertical"
+    android:paddingLeft="@dimen/view_space10"
+    android:paddingRight="@dimen/view_space10">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:orientation="horizontal"
+        android:paddingRight="@dimen/view_space10">
+
+        <LinearLayout
+            style="@style/network_style.item_layout"
+            android:layout_weight="1">
+
+            <TextView
+                style="@style/network_style.title"
+                android:text="@string/wifi_enable_switch_title" />
+
+            <TextView
+                android:id="@+id/network_wifi_connect_content"
+                style="@style/network_style.summary"
+                android:visibility="gone" />
+
+        </LinearLayout>
+
+        <Switch
+            android:id="@+id/network_wifi_enable_toggle"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="@dimen/view_space10" />
+    </LinearLayout>
+
+    <TextView
+        style="@style/network_style.tip"
+        android:text="@string/wifi_devices_list_text" />
+
+    <include layout="@layout/network_include_split_line" />
+
+
+    <ListView
+        android:id="@+id/network_wifi_devices_list"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        android:divider="@color/module_network_listview_split"
+        android:dividerHeight="0.01dp"></ListView>
+
+</LinearLayout>

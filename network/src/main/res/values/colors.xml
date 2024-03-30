@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <color name="module_network_split">#DAE7F0</color>
+    <color name="module_network_listview_split">#9FDAE7F0</color>
+    <color name="module_network_background_transparent">#8F000000</color>
+    <color name="module_network_background">#282828</color>
+    <color name="module_network_item_checked">#4A4A4A</color>
+    <color name="module_network_listview_itemfocus">#F59820</color>
+
+
+    <color name="module_network_eth_title_color">#FFFFFF</color>
+    <color name="module_network_eth_text_color">#DFDFDF</color>
+
+    <color name="module_network_panel_title_color">#33B5E5</color>
+</resources>

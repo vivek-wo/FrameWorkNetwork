@@ -1,0 +1,9 @@
+<selector xmlns:android="http://schemas.android.com/apk/res/android">
+
+
+    <!-- Even though these two point to the same resource, have two states so the drawable will invalidate itself when coming out of pressed state. -->
+    <item android:state_focused="true" android:state_pressed="true" android:drawable="@color/module_network_listview_itemfocus" />
+    <item android:state_focused="false" android:state_pressed="true" android:drawable="@color/module_network_listview_itemfocus" />
+    <item android:state_focused="true" android:drawable="@color/module_network_listview_itemfocus" />
+
+</selector>

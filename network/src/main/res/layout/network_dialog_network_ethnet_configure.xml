@@ -1,0 +1,93 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:gravity="center"
+    android:orientation="vertical"
+    android:background="@drawable/network_fragment_dialog_background">
+
+    <include layout="@layout/network_dialog_title" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:padding="@dimen/view_space10">
+
+        <CheckBox
+            android:id="@+id/network_eth_mode_toggle"
+            style="@style/network_style_checkbox"
+            android:checked="true"
+            android:text="@string/eth_mode_toggle_title" />
+
+
+        <TextView
+            style="@style/network_style.summary"
+            android:text="@string/eth_ip_edit_title" />
+
+        <EditText
+            android:id="@+id/network_eth_ip_edit"
+            style="@style/network_style.edit.ip"
+            android:enabled="false"
+            android:text="@string/eth_ip_default_text" />
+
+
+        <TextView
+            style="@style/network_style.summary"
+            android:text="@string/eth_netmask_edit_title" />
+
+        <EditText
+            android:id="@+id/network_eth_netmask_edit"
+            style="@style/network_style.edit.ip"
+            android:enabled="false" />
+
+
+        <TextView
+            style="@style/network_style.summary"
+            android:text="@string/eth_gateway_edit_title" />
+
+        <EditText
+            android:id="@+id/network_eth_gateway_edit"
+            style="@style/network_style.edit.ip"
+            android:enabled="false" />
+
+        <TextView
+            style="@style/network_style.summary"
+            android:text="@string/eth_dns_edit_title" />
+
+        <EditText
+            android:id="@+id/network_eth_dns_edit"
+            style="@style/network_style.edit.ip"
+            android:enabled="false" />
+
+        <TextView
+            style="@style/network_style.summary"
+            android:text="@string/eth_mac_edit_title" />
+
+        <EditText
+            android:id="@+id/network_eth_mac_edit"
+            style="@style/network_style.edit"
+            android:enabled="false" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/network_dialog_Button_height"
+            android:layout_marginTop="@dimen/view_space5"
+            android:gravity="center"
+            android:orientation="horizontal">
+
+            <Button
+                android:id="@+id/btn_confirm"
+                style="@style/network_style.button"
+                android:layout_weight="1"
+                android:text="@string/btn_confirm" />
+
+            <Button
+                android:id="@+id/btn_cancel"
+                style="@style/network_style.button"
+                android:layout_marginLeft="@dimen/view_space5"
+                android:layout_weight="1"
+                android:text="@string/btn_cancel" />
+        </LinearLayout>
+    </LinearLayout>
+</LinearLayout>

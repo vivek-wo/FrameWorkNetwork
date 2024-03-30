@@ -1,0 +1,206 @@
+<?xml version="1.0" encoding="utf-8"?><!-- Copyright (C) 2010 The Android Open Source Project
+
+     Licensed under the Apache License, Version 2.0 (the "License");
+     you may not use this file except in compliance with the License.
+     You may obtain a copy of the License at
+
+          http://www.apache.org/licenses/LICENSE-2.0
+
+     Unless required by applicable law or agreed to in writing, software
+     distributed under the License is distributed on an "AS IS" BASIS,
+     WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+     See the License for the specific language governing permissions and
+     limitations under the License.
+-->
+
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@drawable/network_fragment_dialog_background"
+        android:orientation="vertical">
+
+        <include layout="@layout/network_dialog_title" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:padding="@dimen/view_space10">
+
+            <LinearLayout
+                android:id="@+id/wifi_add_layout"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:visibility="gone">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical">
+
+                    <TextView
+                        style="@style/network_style.summary"
+                        android:text="@string/wifi_ssid" />
+
+                    <EditText
+                        android:id="@+id/wifi_edit_ssid"
+                        style="@style/network_style.edit"
+                        android:hint="@string/wifi_ssid_hint"
+                        android:inputType="textNoSuggestions"
+                        android:maxLength="32" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical">
+
+                    <TextView
+                        style="@style/network_style.summary"
+                        android:text="@string/wifi_security" />
+
+                    <Spinner
+                        android:id="@+id/wifi_spinner_security"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:entries="@array/wifi_security"
+                        android:prompt="@string/wifi_security" />
+                </LinearLayout>
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/wifi_security_fields_layout"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:visibility="gone">
+
+                <LinearLayout
+                    android:id="@+id/password_layout"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical">
+
+                    <TextView
+                        style="@style/network_style.summary"
+                        android:text="@string/wifi_password" />
+
+                    <EditText
+                        android:id="@+id/wifi_edit_password"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:password="true"
+                        android:singleLine="true" />
+                </LinearLayout>
+
+
+                <CheckBox
+                    android:id="@+id/wifi_chk_show_password"
+                    style="@style/network_style_checkbox"
+                    android:text="@string/wifi_show_password" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/wifi_advanced_toggle_layout"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:visibility="gone">
+
+                <CheckBox
+                    android:id="@+id/wifi_chk_advanced_togglebox"
+                    style="@style/network_style_checkbox"
+                    android:checked="false"
+                    android:text="@string/wifi_show_advanced" />
+            </LinearLayout>
+
+
+            <LinearLayout
+                android:id="@+id/wifi_static_ip_layout"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:visibility="gone">
+
+                <TextView
+                    style="@style/network_style.summary"
+                    android:text="@string/wifi_ip_address" />
+
+                <EditText
+                    android:id="@+id/wifi_edit_ip"
+                    style="@style/network_style.edit.ip" />
+
+
+                <TextView
+                    style="@style/network_style.summary"
+                    android:text="@string/wifi_gateway" />
+
+                <EditText
+                    android:id="@+id/wifi_edit_gateway"
+                    style="@style/network_style.edit.ip" />
+
+
+                <TextView
+                    style="@style/network_style.summary"
+                    android:text="@string/wifi_network_prefix_length" />
+
+                <EditText
+                    android:id="@+id/wifi_edit_netmask"
+                    style="@style/network_style.edit.ip" />
+
+                <TextView
+                    style="@style/network_style.summary"
+                    android:text="@string/wifi_dns1" />
+
+                <EditText
+                    android:id="@+id/wifi_edit_dns1"
+                    style="@style/network_style.edit.ip" />
+
+
+                <TextView
+                    style="@style/network_style.summary"
+                    android:text="@string/wifi_dns2" />
+
+                <EditText
+                    android:id="@+id/wifi_edit_dns2"
+                    style="@style/network_style.edit.ip" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/network_dialog_Button_height"
+                android:layout_marginTop="@dimen/view_space5"
+                android:gravity="center"
+                android:orientation="horizontal">
+
+                <Button
+                    android:id="@+id/btn_cancel"
+                    style="@style/network_style.button"
+                    android:layout_weight="1"
+                    android:text="@string/btn_cancel" />
+
+                <Button
+                    android:id="@+id/btn_cancel_save"
+                    style="@style/network_style.button"
+                    android:layout_weight="1"
+                    android:layout_marginLeft="@dimen/view_space5"
+                    android:text="@string/btn_cancel_save"
+                    android:visibility="gone" />
+
+                <Button
+                    android:id="@+id/btn_confirm"
+                    style="@style/network_style.button"
+                    android:layout_marginLeft="@dimen/view_space5"
+                    android:layout_weight="1"
+                    android:text="@string/btn_connect" />
+
+            </LinearLayout>
+
+        </LinearLayout>
+    </LinearLayout>
+</ScrollView>
