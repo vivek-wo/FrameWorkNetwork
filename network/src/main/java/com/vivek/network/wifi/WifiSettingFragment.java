@@ -8,36 +8,36 @@ import android.view.ViewGroup;
 import androidx.fragment.app.Fragment;
 
 public class WifiSettingFragment extends Fragment {
-    private WifiSFOperetion mWifiSFOperetion;
+    private WifiSFOperation mWifiSFOperation;
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        mWifiSFOperetion = new WifiSFOperetion(this);
+        mWifiSFOperation = new WifiSFOperation(this);
     }
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
-        return mWifiSFOperetion.onCreateView(inflater);
+        return mWifiSFOperation.onCreateView(inflater);
     }
 
     @Override
     public void onActivityCreated(Bundle savedInstanceState) {
         super.onActivityCreated(savedInstanceState);
-        mWifiSFOperetion.onActivityCreated();
+        mWifiSFOperation.onActivityCreated();
     }
 
 
     @Override
     public void onResume() {
         super.onResume();
-        mWifiSFOperetion.onResume();
+        mWifiSFOperation.onResume();
     }
 
     @Override
     public void onPause() {
         super.onPause();
-        mWifiSFOperetion.onPause();
+        mWifiSFOperation.onPause();
     }
 
     @Override

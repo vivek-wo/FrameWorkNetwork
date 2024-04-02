@@ -12,7 +12,7 @@ import android.widget.TextView;
 
 import java.util.List;
 
-public class EthernetSFOperetion implements EthernetInterface {
+public class EthernetSFOperation implements EthernetInterface {
     private EthernetPresenter mPresenter;
     private EthernetConfigureDialogFragment mConfigureDialogFragment;
     private Fragment mFragment;
@@ -25,7 +25,7 @@ public class EthernetSFOperetion implements EthernetInterface {
     private LinearLayout mLLayoutConfigure;
     private LinearLayout mLLayoutBody;
 
-    public EthernetSFOperetion(Fragment fragment) {
+    public EthernetSFOperation(Fragment fragment) {
         mFragment = fragment;
         mPresenter = new EthernetPresenter(mFragment.getActivity(), this);
     }

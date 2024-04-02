@@ -7,7 +7,7 @@ import android.view.View;
 import android.view.ViewGroup;
 
 public class EthernetSettingFragment extends Fragment {
-    private EthernetSFOperetion mEthernetSFOperetion;
+    private EthernetSFOperation mEthernetSFOperation;
 
     @Override
     public void onStart() {
@@ -32,30 +32,30 @@ public class EthernetSettingFragment extends Fragment {
     @Override
     public void onResume() {
         super.onResume();
-        mEthernetSFOperetion.onResume();
+        mEthernetSFOperation.onResume();
     }
 
     @Override
     public void onPause() {
         super.onPause();
-        mEthernetSFOperetion.onPause();
+        mEthernetSFOperation.onPause();
     }
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        mEthernetSFOperetion = new EthernetSFOperetion(this);
+        mEthernetSFOperation = new EthernetSFOperation(this);
     }
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
-        return mEthernetSFOperetion.onCreateView(inflater);
+        return mEthernetSFOperation.onCreateView(inflater);
     }
 
     @Override
     public void onActivityCreated(Bundle savedInstanceState) {
         super.onActivityCreated(savedInstanceState);
-        mEthernetSFOperetion.onActivityCreated();
+        mEthernetSFOperation.onActivityCreated();
     }
 
 
