@@ -9,6 +9,9 @@ import android.net.wifi.WifiManager;
 import android.widget.ImageView;
 import android.widget.TextView;
 
+import com.vivek.frameworknetwork.R;
+import com.vivek.network.utils.Summary;
+
 public class AccessPoint implements Comparable {
     /**
      * These values are matched in string arrays -- changes must be kept in sync

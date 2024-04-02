@@ -6,6 +6,9 @@ public interface WifiInterface {
 
     void onWifiSwitchChecked(boolean checked);
 
+    /**
+     * Need to refresh the list manually
+     */
     void onRefreshWifiDevices();
 
     void onWifiDeviceOperation(AccessPoint accessPoint);

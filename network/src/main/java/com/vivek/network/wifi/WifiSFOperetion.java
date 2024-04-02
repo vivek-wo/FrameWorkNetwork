@@ -12,6 +12,8 @@ import android.widget.ListView;
 import android.widget.Switch;
 import android.widget.TextView;
 
+import com.vivek.frameworknetwork.R;
+
 public class WifiSFOperetion implements WifiInterface {
     protected WifiPresenter mWifiPresenter;
     private boolean mStateMachineEvent;

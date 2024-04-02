@@ -16,6 +16,8 @@ import android.view.View;
 import android.widget.AdapterView;
 import android.widget.Toast;
 
+import com.vivek.frameworknetwork.R;
+
 import java.lang.reflect.InvocationTargetException;
 import java.lang.reflect.Method;
 import java.util.ArrayList;
@@ -70,20 +72,33 @@ public class WifiPresenter {
         mScanner = new Scanner();
     }
 
+    /**
+     * Register a WiFi broadcast receiver,you can use it in onResume.
+     */
     public void registerReceiver() {
         mContext.registerReceiver(mReceiver, mFilter);
     }
 
+    /**
+     * Unregister a WiFi broadcast receiver,you can use it in onPause.
+     */
     public void unregisterReceiver() {
         mContext.unregisterReceiver(mReceiver);
     }
 
+    /**
+     * Init WiFi Manager
+     */
     //onActivityCreate
     public void init() {
         mWifiManager = (WifiManager) mContext.getSystemService(Context.WIFI_SERVICE);
-
     }
 
+    /**
+     * Set the enabled status of WiFi, you can follow the switch status of Switch
+     *
+     * @param isChecked
+     */
     public void onWifiEnabledChecked(boolean isChecked) {
         // Show toast message if Wi-Fi is not allowed in airplane mode --hide
         // Disable tethering if enabling Wifi
@@ -101,7 +116,6 @@ public class WifiPresenter {
 
     //Wifi Enable Changed
     private void handleWifiStateChanged(int state) {
-        System.out.println("-------------handleWifiStateChanged " + state);
         switch (state) {
             case WifiManager.WIFI_STATE_ENABLING:
 //                mSwitch.setEnabled(false);
@@ -462,8 +476,12 @@ public class WifiPresenter {
     }
 
 
+    /**
+     * Connect WiFi
+     *
+     * @param config
+     */
     public void submit(WifiConfiguration config) {
-
         if (config == null) {
             if (mSelectedAccessPoint != null
                     && mSelectedAccessPoint.networkId != -1) {
@@ -473,13 +491,8 @@ public class WifiPresenter {
                     Class<?> cls = Class.forName(WifiManager.class.getName());
                     Method method = cls.getMethod("connect", int.class, Class.forName("android.net.wifi.WifiManager$ActionListener"));
                     method.invoke(mWifiManager, mSelectedAccessPoint.networkId, null);
-                } catch (ClassNotFoundException e) {
-                    e.printStackTrace();
-                } catch (NoSuchMethodException e) {
-                    e.printStackTrace();
-                } catch (InvocationTargetException e) {
-                    e.printStackTrace();
-                } catch (IllegalAccessException e) {
+                } catch (ClassNotFoundException | NoSuchMethodException |
+                         InvocationTargetException | IllegalAccessException e) {
                     e.printStackTrace();
                 }
             }
@@ -490,13 +503,8 @@ public class WifiPresenter {
                     Class<?> cls = Class.forName(WifiManager.class.getName());
                     Method method = cls.getMethod("save", WifiConfiguration.class, Class.forName("android.net.wifi.WifiManager$ActionListener"));
                     method.invoke(mWifiManager, config, null);
-                } catch (ClassNotFoundException e) {
-                    e.printStackTrace();
-                } catch (NoSuchMethodException e) {
-                    e.printStackTrace();
-                } catch (InvocationTargetException e) {
-                    e.printStackTrace();
-                } catch (IllegalAccessException e) {
+                } catch (ClassNotFoundException | NoSuchMethodException |
+                         InvocationTargetException | IllegalAccessException e) {
                     e.printStackTrace();
                 }
             }
@@ -510,13 +518,8 @@ public class WifiPresenter {
                 Class<?> cls = Class.forName(WifiManager.class.getName());
                 Method method = cls.getMethod("connect", WifiConfiguration.class, Class.forName("android.net.wifi.WifiManager$ActionListener"));
                 method.invoke(mWifiManager, config, null);
-            } catch (ClassNotFoundException e) {
-                e.printStackTrace();
-            } catch (NoSuchMethodException e) {
-                e.printStackTrace();
-            } catch (InvocationTargetException e) {
-                e.printStackTrace();
-            } catch (IllegalAccessException e) {
+            } catch (ClassNotFoundException | NoSuchMethodException | InvocationTargetException |
+                     IllegalAccessException e) {
                 e.printStackTrace();
             }
 
@@ -528,6 +531,9 @@ public class WifiPresenter {
         updateAccessPoints();
     }
 
+    /**
+     * Forgot password operation
+     */
     public void forget() {
         if (mSelectedAccessPoint.networkId == -1) {
             // Should not happen, but a monkey seems to triger it
@@ -539,13 +545,8 @@ public class WifiPresenter {
             Class<?> cls = Class.forName(WifiManager.class.getName());
             Method method = cls.getMethod("forget", int.class, Class.forName("android.net.wifi.WifiManager$ActionListener"));
             method.invoke(mWifiManager, mSelectedAccessPoint.networkId, null);
-        } catch (ClassNotFoundException e) {
-            e.printStackTrace();
-        } catch (NoSuchMethodException e) {
-            e.printStackTrace();
-        } catch (InvocationTargetException e) {
-            e.printStackTrace();
-        } catch (IllegalAccessException e) {
+        } catch (ClassNotFoundException | NoSuchMethodException | InvocationTargetException |
+                 IllegalAccessException e) {
             e.printStackTrace();
         }
 
@@ -611,6 +612,14 @@ public class WifiPresenter {
         return mAccessPointLists.get(position);
     }
 
+    /**
+     * Provide quick Item click operations
+     *
+     * @param parent
+     * @param view
+     * @param position
+     * @param id
+     */
     public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
         if (!mWifiManager.isWifiEnabled()) {
             return;
@@ -625,17 +634,11 @@ public class WifiPresenter {
                 Class<?> cls = Class.forName(WifiManager.class.getName());
                 Method method = cls.getMethod("connect", WifiConfiguration.class, Class.forName("android.net.wifi.WifiManager$ActionListener"));
                 method.invoke(mWifiManager, mSelectedAccessPoint.getConfig(), null);
-            } catch (ClassNotFoundException e) {
-                e.printStackTrace();
-            } catch (NoSuchMethodException e) {
-                e.printStackTrace();
-            } catch (InvocationTargetException e) {
-                e.printStackTrace();
-            } catch (IllegalAccessException e) {
+            } catch (ClassNotFoundException | InvocationTargetException | NoSuchMethodException |
+                     IllegalAccessException e) {
                 e.printStackTrace();
             }
         } else {
-//            showDialog(mSelectedAccessPoint, false);
             if (mWifiInterface != null) {
                 mWifiInterface.onWifiDeviceOperation(mSelectedAccessPoint);
             }
